@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PixelMorph - Image Converter</title>
+    <link rel="stylesheet" href="styles.css">
+
+
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1 class="site-name">PixelMorph</h1>
+        </header>
+
+        <div class="drag-drop-area" id="dragDropArea">
+            <input type="file" id="fileInput" accept="image/*" hidden>
+            <p>Drag and drop an image here or <span id="uploadBtn">browse</span></p>
+        </div>
+
+        <div class="conversion-options">
+            <label for="format">Convert to:</label>
+            <select id="format">
+                <option value="png">PNG</option>
+                <option value="jpeg">JPEG</option>
+                <option value="webp">WEBP</option>
+            </select>
+
+            <label for="quality">Quality:</label>
+            <select id="quality">
+                <option value="1080p">1080p (High)</option>
+                <option value="720p">720p (Medium)</option>
+                <option value="480p">480p (Low)</option>
+            </select>
+        </div>
+
+        <button id="convertBtn" class="convert-button">Convert</button>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="spinner"></div>
+        <p>Converting your file, please wait...</p>
+    </div>
+
+    <!-- Popup Modal -->
+    <div class="popup-overlay" id="popupOverlay">
+        <div class="popup">
+            <h2>Thank You!</h2>
+            <p>Your file is ready to download.</p>
+            <a id="downloadLink" class="download-link" href="#" download>Download File</a>
+            <button id="convertMoreBtn" class="convert-more-button">Convert More</button>
+        </div>
+    </div>
+    <div id="uploadMessage" class="upload-message"></div>
+
+    <section id="conversionSlide" class="conversion-container">
+
+    </section>
+    <section id="blank">
+
+    </section>
+    <footer>
+        &copy; All Copyrights reserved
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
